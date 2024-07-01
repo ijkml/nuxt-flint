@@ -1,52 +1,54 @@
-import { fileURLToPath } from 'node:url';
-import svgLoader from 'vite-svg-loader';
+// import { fileURLToPath } from 'node:url';
+// import svgLoader from 'vite-svg-loader';
 
 export default defineNuxtConfig({
-  devServer: {
-    host: '',
-    port: 3221,
+  future: {
+    compatibilityVersion: 4,
   },
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
-    head: {
-      // link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
-      link: [{ rel: 'icon', type: 'image/png', href: '/nuxt.png' }],
-      htmlAttrs: {
-        lang: 'en-US',
-      },
-      meta: [{ name: 'description', content: 'Nuxt Flint' }],
-    },
-  },
-  alias: {
-    '@img': fileURLToPath(new URL('./assets/images', import.meta.url)),
-    // '@icons': fileURLToPath(new URL('./assets/icons', import.meta.url)),
-    // '@data': fileURLToPath(new URL('./assets/data', import.meta.url)),
-  },
-  modules: ['@vueuse/nuxt', '@unocss/nuxt', 'nuxt-beastcss'],
-  experimental: {
-    // inlineSSRStyles: false,
-    typedPages: true,
-  },
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@use "@/assets/styles/global.scss" as *;',
-        },
-      },
-    },
-    plugins: [
-      svgLoader({
-        defaultImport: 'url',
-      }),
-    ],
-  },
-  css: ['@unocss/reset/tailwind.css', '@/assets/styles/root.scss'],
-  typescript: {
-    tsConfig: {
-      compilerOptions: {
-        moduleResolution: 'bundler',
-      },
-    },
-  },
+  // experimental: {
+  //   typedPages: true,
+  // },
+  // modules: ['@vueuse/nuxt', '@unocss/nuxt'],
+  // devServer: {
+  //   host: '',
+  //   port: 3221,
+  // },
+  // app: {
+  //   pageTransition: { name: 'page', mode: 'out-in' },
+  //   head: {
+  //     // link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+  //     link: [{ rel: 'icon', type: 'image/png', href: '/nuxt.png' }],
+  //     htmlAttrs: {
+  //       lang: 'en-US',
+  //     },
+  //     meta: [{ name: 'description', content: 'Nuxt Flint' }],
+  //   },
+  // },
+  // alias: {
+  //   '@img': fileURLToPath(new URL('./app/assets/images', import.meta.url)),
+  //   // '@icons': fileURLToPath(new URL('./assets/icons', import.meta.url)),
+  //   // '@data': fileURLToPath(new URL('./assets/data', import.meta.url)),
+  // },
+  // vite: {
+  //   css: {
+  //     preprocessorOptions: {
+  //       scss: {
+  //         additionalData: '@use "@/assets/styles/global.scss" as *;',
+  //       },
+  //     },
+  //   },
+  //   plugins: [
+  //     svgLoader({
+  //       defaultImport: 'url',
+  //     }),
+  //   ],
+  // },
+  // css: ['@unocss/reset/tailwind.css', '@/assets/styles/root.scss'],
+  // typescript: {
+  //   tsConfig: {
+  //     compilerOptions: {
+  //       moduleResolution: 'bundler',
+  //     },
+  //   },
+  // },
 });
