@@ -1,3 +1,3 @@
 # Nuxt Flint
 
-A Vitesse fork/mod
+A Nuxt starter template.
